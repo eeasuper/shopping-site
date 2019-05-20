@@ -1,0 +1,46 @@
+div.indicators {
+  margin-top: 5px !important;
+}
+
+div.indicators > div{
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.slide-container{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.image-container > img{
+  vertical-align: middle;
+  display: inline-block;
+  /*width:100%;*/
+}
+
+.image-container{
+  text-align: center;
+}
+
+/*.image-container:before{
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+}*/
+
+.image-link{
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 900px) {
+  .image-container > img{
+    width:100%;
+  }
+}

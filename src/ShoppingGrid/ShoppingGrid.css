@@ -1,0 +1,56 @@
+.shopping-grid{
+  overflow: auto;
+}
+.shopping-grid > div{
+  overflow: auto;
+}
+
+.shopping-grid >div > div> h1{
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.shop-ul{
+  display: block;
+  padding-left:0;
+  overflow: auto;
+}
+.shop-ul::after{
+  content:'';
+  display:inline-block;
+}
+
+.shop-li{
+  float:left;
+  width: 25%;
+  margin-bottom: 35px;
+}
+
+.shop-li-a{
+  display:block;
+  cursor: pointer;
+}
+
+.shop-li-a > img{
+  max-width: 181.8181818181818px;
+  max-height: 250px;
+  margin: 0 auto 15px;
+  display: block;
+}
+.shop-li-a > p{
+  margin: 0;
+}
+.shop-li-a > p:nth-child(3){
+  margin:8px 0 0 0;
+}
+
+.shop-li-a:hover p:nth-child(2){
+  opacity: 0.5;
+}
+
+
+@media only screen and (min-width: 750px){
+  .shop-li:nth-child(5){
+    clear: both;
+  }
+}

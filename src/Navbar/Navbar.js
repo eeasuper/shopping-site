@@ -1,6 +1,7 @@
 import React from 'react';
-import Dropdown from 'react-dropdown'
+import { Link } from "react-router-dom";
 import './Navbar.css';
+import Dropdown, {DropdownTrigger, DropdownContent} from 'react-simple-dropdown';
 
 const options = [
   {value: 'Earplug', label: 'Earplug', className:'optional'},
@@ -9,22 +10,18 @@ const options = [
 
 const defaultOption = "SHOP";
 
+function test(){
+  console.log("test")
+}
+
+
 function Navbar(props){
   const dropdown = React.createRef();
 
-  function showDropdown(){
-    const drop = dropdown.current;
-    if(drop.style.display === "block"){
-      /* if the user clicks the button twice, close the menu.*/
-      drop.style.display = "none"
-    }else{
-      drop.style.display = "block";
-    }
-  }
+  function toggleDropdown(e){
 
-  function closeDropdown(){
     const drop = dropdown.current;
-    drop.style.display = "none";
+    drop.hide();
   }
 
   return(
@@ -38,20 +35,20 @@ function Navbar(props){
         <nav className="grid-item">
           <ul className="nav-ul">
             <li>
-              <a>Home</a>
+              <Link to="/" className="nav-menu-label nav-anchor">Home</Link>
             </li>
             <li>
-              <div className="dropdown">
-                <button className="dropdown-button" onClick={showDropdown} onBlur={closeDropdown}>
-                  SHOP
-                  <svg aria-hidden="true" focusable="false" role="presentation" className="icon-chevron-down" viewBox="0 0 498.98 284.49"><path className="cls-1" d="M80.93 271.76A35 35 0 0 1 140.68 247l189.74 189.75L520.16 247a35 35 0 1 1 49.5 49.5L355.17 511a35 35 0 0 1-49.5 0L91.18 296.5a34.89 34.89 0 0 1-10.25-24.74z" transform="translate(-80.93 -236.76)"></path></svg>
-                </button>
-                <div ref={dropdown} class="dropdown-content">
-                  <a href="#">Link 1</a>
-                  <a href="#">Link 2</a>
-                  <a href="#">Link 3</a>
-                </div>
-              </div>
+              <Dropdown className="dropdown" ref={dropdown}>
+                 <DropdownTrigger className="nav-menu-label" >
+                   SHOP
+                   <svg aria-hidden="true" focusable="false" role="presentation" className="icon-chevron-down" viewBox="0 0 498.98 284.49"><path className="cls-1" d="M80.93 271.76A35 35 0 0 1 140.68 247l189.74 189.75L520.16 247a35 35 0 1 1 49.5 49.5L355.17 511a35 35 0 0 1-49.5 0L91.18 296.5a34.89 34.89 0 0 1-10.25-24.74z" transform="translate(-80.93 -236.76)"></path></svg>
+                 </DropdownTrigger>
+                 <DropdownContent className="dropdown-content" onClick={toggleDropdown}>
+                    <Link to="/all" className="dropdown-anchor nav-anchor">All Products</Link>
+                    <Link to="/" className="dropdown-anchor nav-anchor">Link 2</Link>
+                    <Link to="/" className="dropdown-anchor nav-anchor">Link 3</Link>
+                 </DropdownContent>
+              </Dropdown>
             </li>
           </ul>
         </nav>

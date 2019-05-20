@@ -1,0 +1,108 @@
+.footer-page > div {
+  margin-top: 55px;
+}
+
+.footer-grid{
+  /*margin-top: 55px;*/
+}
+
+.footer-grid > ul{
+  width: 50%;
+  margin: 0;  
+  padding-left: 0;
+  display: inline-block;
+}
+
+.footer-grid > ul li {
+  display: block;
+  padding: 0 20px 6px 0;
+}
+
+.footer-mailing{
+  display: inline-block;
+  width:50%;
+  vertical-align: top;
+}
+
+.footer-mailing > span {
+  display:block;
+  margin: 0 0 17.5px;
+}
+
+.footer-input-group{
+  position:relative;
+  border-collapse: separate;
+  width:100%;
+  display: table;
+}
+
+.footer-input-group input{
+  display:table-cell;
+  width:100%;
+  border-right: 0;
+  border-radius: 2px 0 0 2px;
+  height: 46px;
+  padding: 10px 18px;
+}
+
+.footer-input-group span{
+  white-space: nowrap;
+  display:table-cell;
+}
+
+.footer-input-group span button{
+  height: 46px;
+    border-radius: 0 2px 2px 0;
+  white-space: nowrap;
+}
+
+.sub{
+    background-color: #fad7da;
+}
+
+@media only screen and (max-width: 749px){
+  .footer-grid > ul{
+    width:100%;
+    text-align: center;
+    margin-bottom:35px;
+  }
+  .footer-grid > ul li{
+    display: inline-block;
+  }
+  .footer-mailing{
+    width:100%;
+  }
+  .footer-input-group{
+    max-width:320px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 750px){
+
+}
+
+.footer-social-icons ul{
+  /*margin-top: 55px;*/
+  padding-left: 0;
+}
+
+.footer-social-icons ul li {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+  padding: 0 3px;
+}
+
+.social-icons-link{
+
+}
+
+.social-icons-link span img{
+  width: 25px;
+  height: 25px;
+}
+
+.footer-copyright{
+  font-size:12px;
+}

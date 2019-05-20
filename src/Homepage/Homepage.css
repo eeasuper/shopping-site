@@ -1,0 +1,51 @@
+.second-section{
+  width:100%;
+  padding: 100px 0px;
+  text-align:center;
+  overflow: hidden;
+}
+
+/* enables vertical alignment of the all contents in second-section.*/
+.second-section::before{
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.second-section > img{
+  height: 50%;
+  vertical-align: middle;
+  display: inline-block;
+  max-height:275px;
+}
+
+.logo-description{
+  display: inline-block;
+  vertical-align: middle;
+  padding: 35px 0px 35px 35px;
+}
+
+.logo-description > h2{
+  font-size: 1.625em;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight:400;
+}
+
+.logo-subtext{
+  font-size: 1.125em;
+}
+
+.recommended-title{
+  text-align: center;
+}
+.recommended-title> h2{
+  margin-bottom:0;
+}
+/*description beside logo should float to the left*/
+@media only screen and (max-width: 935px) {
+  .logo-description{
+    display:block;
+    text-align: left;
+  }
+}
