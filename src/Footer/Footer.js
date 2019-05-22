@@ -23,7 +23,7 @@ function Footer(){
               <input placeholder="Email Address">
               </input>
               <span>
-                  <button className="btn sub">SUBSCRIBE</button>
+                  <button className="btn">SUBSCRIBE</button>
               </span>
             </div>
           </div>

@@ -56,10 +56,6 @@
   white-space: nowrap;
 }
 
-.sub{
-    background-color: #fad7da;
-}
-
 @media only screen and (max-width: 749px){
   .footer-grid > ul{
     width:100%;

@@ -14,7 +14,7 @@ const Pagination = withRouter(({activePage,itemsCountPerPage,totalItemsCount,...
     routerProps.history.push(`${routerProps.location.pathname}?page=${parseInt(activePage) + 1}`)
   }
 
-  const totalPages = Math.ceil(totalItemsCount/8);
+  const totalPages = Math.ceil(totalItemsCount/itemsCountPerPage);
   return(
     <ul className="pagination">
       <li className="arrow-li">

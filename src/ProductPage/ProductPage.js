@@ -72,5 +72,5 @@ const ProductPage = withRouter(({location,...props})=>{
     </section>
   )
 });
-// get rid of className in buttons to style manually. data-pin-custom enables custom styling
+
 export default ProductPage;

@@ -16,7 +16,7 @@ function paginate (array, page_size, page_number) {
 function ShoppingGrid({activePage,title,list}){
   console.log(list);
   const actPage = activePage ? activePage:1;
-  const itemsCountPerPage = 8;
+  const itemsCountPerPage = 12;
   /* paginate() is used to display 'itemsCountPerPage' number of items per page*/
   const grid = paginate(list,itemsCountPerPage,actPage).map((val,ind)=>{
     return (

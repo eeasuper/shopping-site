@@ -38,13 +38,13 @@ function Homepage(){
       <Link to="/all"></Link>
       <Slideshow></Slideshow>
       <section className="second-section">
-        <img src='images/Macks.jpg'/>
+        <img src='images/logo-2.png'/>
         <div className="logo-description">
-          <h2>THE BRAND</h2>
+          <h2>THE WEBSITE</h2>
           <div className="logo-subtext">
-            <p>MACK'S celebrates more than 50 years of earplug sales</p>
-            <p>USA’s #1 Selling and #1 Doctor Recommended Ear Plug Brand</p>
-            <p>For more information visit our <a href="https://www.macksearplugs.com/">homepage</a></p>
+            <p>GUI specializes in only the sales of earplugs</p>
+            <p>MACK'S is USA’s #1 Selling and #1 Doctor Recommended Ear Plug Brand</p>
+            <p>For more information of MACK'S visit their <a href="https://www.macksearplugs.com/">homepage</a></p>
           </div>
         </div>
       </section>

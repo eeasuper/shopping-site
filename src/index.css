@@ -28,6 +28,7 @@ code {
   vertical-align: middle;
   cursor: pointer;
   border: 1px solid transparent;
+  background-color: #7dbbc3;
   color: #fff;
   padding: 10px 18px;
   text-transform: uppercase;
