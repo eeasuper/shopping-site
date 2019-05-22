@@ -28,8 +28,10 @@ function Navbar(props){
     <header className="site-header">
       <div className="grid grid-table">
         <div className="grid-item">
-          <h1>
-            LOGO
+          <h1 className="header-logo">
+            <Link to="/">
+              <img src="images/logo.png" />
+            </Link>
           </h1>
         </div>
         <nav className="grid-item">

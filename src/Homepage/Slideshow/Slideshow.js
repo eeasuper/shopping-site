@@ -1,5 +1,6 @@
 import React from 'react';
 import { Fade } from 'react-slideshow-image';
+import {Link} from 'react-router-dom'
 import './Slideshow.css'
 const fadeImages = [
   'images/set-plugs.jpg',
@@ -20,19 +21,19 @@ function Slideshow(){
       <div className="each-fade">
         <div className="image-container">
           <img src={fadeImages[0]} />
-          <a className="image-link"></a>
+          <Link to={{pathname:'/product', search:'?id=10'}} className="image-link"></Link>
         </div>
       </div>
       <div className="each-fade">
         <div className="image-container">
           <img src={fadeImages[1]} />
-          <a className="image-link"></a>
+          <Link to={{pathname:'/product', search:'?id=4'}} className="image-link"></Link>
         </div>
       </div>
       <div className="each-fade">
         <div className="image-container">
           <img src={fadeImages[2]} />
-          <a className="image-link"></a>
+          <Link to={{pathname:'/product', search:'?id=5'}} className="image-link"></Link>
         </div>
       </div>
     </Fade>

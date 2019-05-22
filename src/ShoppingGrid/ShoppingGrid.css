@@ -29,6 +29,8 @@
 .shop-li-a{
   display:block;
   cursor: pointer;
+  text-decoration: none;
+  color: #000;
 }
 
 .shop-li-a > img{

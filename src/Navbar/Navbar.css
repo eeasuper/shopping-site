@@ -20,6 +20,22 @@
   vertical-align: middle;
 }
 
+.header-logo {
+  max-width: 75px;
+  margin:0;
+}
+
+.header-logo >a {
+  cursor:pointer;
+}
+
+.header-logo >a >img{
+  width:100%;
+}
+.header-logo >a >img:hover{
+  opacity:0.5;
+}
+
 .nav-ul{
   position: relative;
   padding: 0;

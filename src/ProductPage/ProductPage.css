@@ -1,0 +1,92 @@
+.product-container {
+  width:100%;
+  display: inline-block;
+}
+
+.product-container > div{
+  width: 50%;
+  float: left;
+  padding-left: 30px;
+}
+
+/*.product-image > div > img{
+  width: 100%;
+}
+*/
+.enlarged-image-con{
+  left:-10px !important;
+}
+/*.product-image > img{
+  width: 100%;
+}*/
+
+.product-description > p {
+  color: #000;
+  font-size: 1.25em;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.product-description > form > button{
+  max-width: 300px;
+  display: block;
+  width: 100%;
+  line-height: 1.4;
+  padding-left: 5px;
+  padding-right: 5px;
+  white-space: normal;
+}
+
+.product-description-2{
+  margin: 30px 0px;
+}
+
+.product-description-2 > ul > li {
+  list-style: disc;
+}
+
+.product-description-2 > ul{
+  margin:0;
+}
+
+.social-icons{
+
+}
+.social-icons >div{
+  display: inline-block;
+  padding: 8px 10px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+.social-icons >div >a > span{
+  font-size: 0.75em;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+  color: #000;
+  cursor:pointer;
+}
+
+.icon-facebook path{
+  fill: #3b5998;
+}
+
+.icon-twitter path{
+  fill: #00aced;
+}
+
+.icon-pin path{
+  fill: #cb2027;
+}
+
+.icon{
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+@media only screen and (max-width: 749px){
+
+}

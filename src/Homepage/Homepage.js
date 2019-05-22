@@ -8,27 +8,30 @@ const recommendedList = [
   {
     name: 'Pillow Soft® Silicone Putty Ear Plugs',
     price: 5000,
-    picture: 'images/ear-silicone.jpg'
+    picture: 'images/ear-silicone.jpg',
+    id:1
   },
   {
     name: 'Flightguard™ Airplane Pressure Relief Ear Plugs',
     price: 14000,
-    picture: 'images/ear-flightguard.jpg'
+    picture: 'images/ear-flightguard.jpg',
+    id: 2
   },
   {
     name: 'Hear Plugs® High Fidelity Earplugs',
     price: 15000,
-    picture: 'images/ear-hear.jpg'
+    picture: 'images/ear-hear.jpg',
+    id: 3
   },
   {
     name: 'Earammo® Earplugs for Men',
     price: 5000,
-    picture: 'images/ear-ammos.jpg'
+    picture: 'images/ear-ammos.jpg',
+    id: 4
   },
 ]
 
 function Homepage(){
-
 
   return(
     <div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import './ShoppingGrid.css';
+import {Link} from 'react-router-dom';
 import Pagination from "./Pagination/Pagination";
 
 function handlePageChange(e){
@@ -20,11 +21,11 @@ function ShoppingGrid({activePage,title,list}){
   const grid = paginate(list,itemsCountPerPage,actPage).map((val,ind)=>{
     return (
       <li className="shop-li" key={ind}>
-        <a className="shop-li-a" >
+        <Link to={{pathname:'/product', search:`?id=${val.id}`}} className="shop-li-a" >
           <img src={val.picture}/>
           <p>{val.name}</p>
           <p>₩{val.price}</p>
-        </a>
+        </Link>
       </li>
     )
   })
