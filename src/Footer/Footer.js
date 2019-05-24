@@ -7,13 +7,13 @@ function Footer(){
       <div className="page-width footer-page">
         <div className="footer-grid">
           <ul>
-            <li>About</li>
-            <li>Customer Support</li>
-            <li>Pre-Order Shipping Schedule</li>
-            <li>Collaborations</li>
-            <li>Wholesalers & Retailers</li>
-            <li>Terms & Conditions</li>
-            <li>Privacy Policy</li>
+            <li><span className="btn-mess">About</span></li>
+            <li><span className="btn-mess">Customer Support</span></li>
+            <li><span className="btn-mess">Pre-Order Shipping Schedule</span></li>
+            <li><span className="btn-mess">Collaborations</span></li>
+            <li><span className="btn-mess">Wholesalers & Retailers</span></li>
+            <li><span className="btn-mess">Terms & Conditions</span></li>
+            <li><span className="btn-mess">Privacy Policy</span></li>
           </ul>
           <div className="footer-mailing">
             <span>

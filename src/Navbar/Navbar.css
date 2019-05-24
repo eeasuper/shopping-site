@@ -111,6 +111,10 @@
   display: block;
 }
 
+/*.nav-icons >div:hover, .nav-icons >a:hover{
+  opacity:0.5;
+}*/
+
 /*max-width is changed to 250px through js when user clicks on searc button to expand input*/
 .nav-search{
   display: inline-block;
@@ -118,6 +122,8 @@
   width: 100%;
   max-width: 30px;
   vertical-align: middle;
+  transition: max-width 0.35s cubic-bezier(0.29, 0.63, 0.44, 1);
+  margin-right: 5px;
 }
 
 .nav-search > button{
@@ -137,8 +143,8 @@
 }
 
 .nav-search >button >svg{
+  padding-bottom: 8px;
   height:30px;
-  display:inline-block;
 }
 
 /*cursor is changed to auto when input is expanded.*/
@@ -146,13 +152,32 @@
   border: 1px solid #fff;
   max-width: 100%;
   line-height: 1.2;
-  padding: 10px 18px;
   background-color: transparent;
   border-radius: 2px;
   color: #000;
   border-color: transparent;
-  padding-left: 35px;
   width: 100%;
   outline:none;
   cursor: pointer;
+  padding: 0px 0px 0px 30px;
 }
+
+.navbar-icon{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+.account-icon{
+  padding: 10px;
+  cursor: pointer;
+}
+
+.cart-icon {
+  padding: 10px;
+  cursor:pointer;
+  color: #000;
+}
+

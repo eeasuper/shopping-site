@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import Pagination from "./Pagination/Pagination";
 
 function handlePageChange(e){
-  console.log(e);
+
 }
 
 function paginate (array, page_size, page_number) {
@@ -14,7 +14,7 @@ function paginate (array, page_size, page_number) {
 
 /* ShoppingGrid requires three props: list( list of products), title (title of the page) and activePage (for pagination)*/
 function ShoppingGrid({activePage,title,list}){
-  console.log(list);
+
   const actPage = activePage ? activePage:1;
   const itemsCountPerPage = 12;
   /* paginate() is used to display 'itemsCountPerPage' number of items per page*/

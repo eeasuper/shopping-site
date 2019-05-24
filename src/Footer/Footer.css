@@ -16,6 +16,7 @@
 .footer-grid > ul li {
   display: block;
   padding: 0 20px 6px 0;
+  cursor: pointer;
 }
 
 .footer-mailing{

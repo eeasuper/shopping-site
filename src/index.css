@@ -16,6 +16,9 @@ input{
   line-height: 1.2;
   font-size: 16px;
 }
+th,td{
+  text-align:left;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -36,8 +39,47 @@ code {
   white-space: normal;
   font-size: 14px;
 }
+.btn-secondary{
+  background-color: #fff;
+  color: #000;
+}
+.btn-small{
+  padding: 8px 10px;
+  font-size: 0.75em;
+  line-height: 1;
+}
+/*btn-mess is a class used to make mess.png to show when btn is hovered*/
+.btn-mess{
+  position:relative;
+}
 
+.btn-mess > a{
+  z-index: 10;
+  position:relative;
+}
+.btn-mess::after {
+  content: '';
+  background-repeat:no-repeat;
+  background-image: url('./seed/mess.png');
+  background-size: contain;
+  position:absolute;
+  top:50%;
+  left:50%;
+  display: block;
+  z-index:1;
+  width: 75px;
+  height: 75px;
+  opacity: 0;
+  transition: all 300ms ease;
+  transform: translate(-60%, -40%);
+}
 
+.btn-mess:hover::after{
+  opacity: 0.5;
+}
+.btn-mess:hover > a{
+  opacity: 0.95;
+}
 /*.icon_fallback_text,.visually_hidden{
   position: absolute !important;
   overflow: hidden;

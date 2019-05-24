@@ -8,6 +8,7 @@ import ActivityProducts from './ActivityProducts/ActivityProducts';
 import FlightProducts from './FlightProducts/FlightProducts';
 import MusicProducts from './MusicProducts/MusicProducts';
 import ProductPage from './ProductPage/ProductPage';
+import CartPage from './CartPage/CartPage';
 import history from './services/history';
 import ScrollToTop from './services/ScrollToTop';
 import './App.css';
@@ -25,6 +26,7 @@ function App() {
         <Route path="/activity" component={ActivityProducts}/>
         <Route path="/music" component={MusicProducts}/>
         <Route path="/flight" component={FlightProducts}/>
+        <Route path="/cart" component={CartPage}/>
         <Footer/>
       </ScrollToTop>
     </Router>
