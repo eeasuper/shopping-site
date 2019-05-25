@@ -16,11 +16,12 @@
   padding: 22px 15px 22px 0;  
 }
 
-.cart-description > div:nth-child(1){
+.cart-description > a{
   color: #000;
   font-size: 1.125em;
   min-width: 100px;
   padding-bottom:15px;
+  text-decoration: none;
 }
 
 .cart-description > p{

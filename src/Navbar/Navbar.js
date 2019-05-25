@@ -31,7 +31,7 @@ function Navbar(props){
       <div className="grid grid-table">
         <div className="grid-item">
           <h1 className="header-logo">
-            <Link to="/" >
+            <Link to="/" title="Gui">
               <img src="images/logo.png" />
             </Link>
           </h1>

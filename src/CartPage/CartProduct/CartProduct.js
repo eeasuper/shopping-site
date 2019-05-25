@@ -1,6 +1,8 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './CartProduct.css'
-function CartProduct({product,quantity,changeHandler}){
+function CartProduct({product,quantity,changeHandler,removeHandler}){
+
   return(
     <tr>
       <td className="cart-image">
@@ -9,9 +11,9 @@ function CartProduct({product,quantity,changeHandler}){
         </a>
       </td>
       <td className="cart-description">
-        <div>{product.name}</div>
+        <Link to={{pathname:'/product', search:`?id=${product.id}`}} >{product.name}</Link>
         <p>
-          <a className="btn-small">
+          <a className="btn-small" data-product={product.id} onClick={removeHandler}>
             REMOVE
           </a>
         </p>
