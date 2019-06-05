@@ -19,6 +19,7 @@ function ShoppingGrid({activePage,title,list}){
   const itemsCountPerPage = 12;
   /* paginate() is used to display 'itemsCountPerPage' number of items per page*/
   const grid = paginate(list,itemsCountPerPage,actPage).map((val,ind)=>{
+    
     return (
       <li className="shop-li" key={ind}>
         <Link to={{pathname:'/product', search:`?id=${val.id}`}} className="shop-li-a" >
@@ -29,7 +30,7 @@ function ShoppingGrid({activePage,title,list}){
       </li>
     )
   })
-  console.log(grid);
+  
   return(
     <div className="shopping-grid">
       <div className="page-width">

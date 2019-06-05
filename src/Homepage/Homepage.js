@@ -31,8 +31,7 @@ const recommendedList = [
   },
 ]
 
-function Homepage(){
-
+function Homepage(props){
   return(
     <div>
       <Link to="/all"></Link>

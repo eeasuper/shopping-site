@@ -1,4 +1,5 @@
 import React ,{useState}from 'react';
+import axios from 'axios';
 import './ProductPage.css';
 import {withRouter,Link} from 'react-router-dom';
 import productList from '../seed/AllProducts';
@@ -8,18 +9,40 @@ import SimpleSnackbar from '../services/SimpleSnackbar';
 
 const ProductPage = withRouter(({location,...props})=>{
   const [openSb, setOpenSb] = React.useState(false);
+  const [sbMessage,setSbMessage] = React.useState("");
+  // const [product, setProduct] = React.useState({});
+  // const [isLoading, setIsLoading] = useState(false);
+  const productId = parseInt(location.search.substring(location.search.lastIndexOf("=")+1, location.search.length));
+  // const url = "http://localhost:8080/product/"+productId;
+  // const pictureURL = "http://localhost:8080/product/"+productId+"/thumbnail";
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     setIsLoading(true);
+
+  //     const result = await axios.get(url);
+      
+  //     setProduct(result.data);
+  //     setIsLoading(false);
+  //   };
+    
+  //   fetchData();
+  // },productId);
 
   const product = productList.find((val,ind)=>{
-    return val.id === parseInt(location.search.substring(location.search.lastIndexOf("=")+1, location.search.length));
+    return val.id === productId;
   })
   const descriptionUl = product.description_ul.map((val,ind)=>{
     return (
       <li key={ind}>{val}</li>
     )
-  })
+  });
 
-  function openSnackbar(){
+  function openSnackbar(message){
     setOpenSb(true);
+    if(message){
+      setSbMessage(message)
+    }
   }
 
   function handleCloseSnackbar(event, reason) {
@@ -34,27 +57,42 @@ const ProductPage = withRouter(({location,...props})=>{
     e.persist();
     let cart = JSON.parse(localStorage.getItem("cart"));
     let productId = parseInt(e.target.dataset.product);
-    if(!cart){
-      let newCart = {
-        [productId]: {
-          quantity: 1
-        }
-      };
-      localStorage.setItem("cart",JSON.stringify(newCart));
-    }else{
-      let product = Object.keys(cart).filter((v)=>{
-        return parseInt(v) === productId;
-      })[0];
-      if(product){
-        // cart[product].quantity += 1;
-      }else{
-        cart[productId] = {
-          quantity: 1
-        }
+    // const url = "http://localhost:8080/cart/";
+
+    // if(!cart){
+    //   let newCart = {
+    //     [productId]: {
+    //       quantity: 1
+    //     }
+    //   };
+    //   localStorage.setItem("cart",JSON.stringify(newCart));
+    // }else{
+    //   let product = Object.keys(cart).filter((v)=>{
+    //     return parseInt(v) === productId;
+    //   })[0];
+    //   if(product){
+    //     /*function to increase quantity when clicked more than once.*/
+    //     // cart[product].quantity += 1;
+    //   }else{
+    //     cart[productId] = {
+    //       quantity: 1
+    //     }
+    //   }
+    //   localStorage.setItem("cart",JSON.stringify(cart));
+    // }
+    props.addToCart({
+      productId: productId,
+      quantity: 1
+    }).then((response)=>{
+      console.log(response);
+      if(response){
+        openSnackbar("Item has been added to cart");
       }
-      localStorage.setItem("cart",JSON.stringify(cart));
-    }
-    openSnackbar();
+    }).catch((errorMessage)=>{
+      if(errorMessage){
+        openSnackbar(errorMessage);
+      }
+    })
   }
 
   return(
@@ -109,7 +147,7 @@ const ProductPage = withRouter(({location,...props})=>{
           </div>
         </div>
       </div>
-      <SimpleSnackbar open={openSb} handleClose={handleCloseSnackbar}/>
+      <SimpleSnackbar open={openSb} handleClose={handleCloseSnackbar} message={sbMessage}/>
     </section>
   )
 });

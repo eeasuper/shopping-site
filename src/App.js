@@ -1,40 +1,43 @@
 import React from 'react';
 import {Router, Route,Link} from 'react-router-dom';
-import Homepage from './Homepage/Homepage';
-import Navbar from './Navbar/Navbar';
-import Footer from './Footer/Footer';
-import AllProducts from './AllProducts/AllProducts';
-import ActivityProducts from './ActivityProducts/ActivityProducts';
-import FlightProducts from './FlightProducts/FlightProducts';
-import MusicProducts from './MusicProducts/MusicProducts';
-import ProductPage from './ProductPage/ProductPage';
-import CartPage from './CartPage/CartPage';
-import history from './services/history';
-import ScrollToTop from './services/ScrollToTop';
-import './App.css';
+import {Provider} from "react-redux";
+import {setAuthorizationToken,setCurrentUser,login,getOneUser} from "./store/actions/currentUser";
+import {loadCart} from './store/actions/cart';
+import {configureStore} from "./store";
+import jwtDecode from "jwt-decode";
 
+import Main from './Main';
+import history from './services/history';
+import './App.css';
+const store = configureStore();
+
+if(localStorage.jwtToken){
+  setAuthorizationToken(localStorage.jwtToken);
+  //prevent someone from manually tampering with the key of jwtToken in localStorage
+  try{
+    let jwt = jwtDecode(localStorage.jwtToken);
+    getOneUser(jwt.usr_id).then((user)=>{
+      store.dispatch(setCurrentUser(user));
+      store.dispatch(loadCart());
+    })
+  } catch(e){ 
+    console.log(e);
+    store.dispatch(setCurrentUser({
+      isAuthenticated: false,
+      user: {}
+    }))
+  }
+}
 
 function App() {
   
   return (
-    <Router history = {history} className="App">
-      <ScrollToTop>
-        <Navbar/>
-        <Route exact path="/" component={Homepage}/>
-        <Route path="/all" component={AllProducts}/>
-        <Route path="/product" component={ProductPage}/>
-        <Route path="/activity" component={ActivityProducts}/>
-        <Route path="/music" component={MusicProducts}/>
-        <Route path="/flight" component={FlightProducts}/>
-        <Route path="/cart" component={CartPage}/>
-        <Footer/>
-      </ScrollToTop>
-    </Router>
+    <Provider store={store}>
+      <Router history = {history} className="App" dispatch={store.dispatch}>
+        <Main dispatch={store.dispatch}/>
+      </Router>
+    </Provider>
   );
 }
 
 export default App;
-
-    // display: block;
-    // width: 100%;
-    // height: 50px;

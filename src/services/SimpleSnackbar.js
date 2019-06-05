@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function SimpleSnackbar({handleClose,open}) {
+function SimpleSnackbar({handleClose,open,message}) {
   const classes = useStyles();
 
   return (
@@ -31,7 +31,7 @@ function SimpleSnackbar({handleClose,open}) {
       <Snackbar
         anchorOrigin={{
           vertical: 'bottom',
-          horizontal: 'center',
+          horizontal: 'left',
         }}
         open={open}
         autoHideDuration={6000}
@@ -39,7 +39,7 @@ function SimpleSnackbar({handleClose,open}) {
         >
         <SnackbarContent
           className={classes.snackbar}
-          message={<span id="message-id">Item added to cart.</span>}
+          message={<span id="message-id">{message}</span>}
           action={[
             <Button className={classes.okay} key="okay" size="small" onClick={handleClose}>
               Okay

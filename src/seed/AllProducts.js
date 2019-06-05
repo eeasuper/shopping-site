@@ -131,7 +131,7 @@ const AllProducts = [
     name: 'Dreamgirl™ Soft Foam Ear Plugs',
     price: 7000,
     picture:'images/ear-dreamgirl.jpg',
-    id: 16,
+    id: 17,
     description: 'Soft foam ear plugs designed for women with small or sensitive ear canals',
     description_ul: ['Unique hollow and flared design maximizes comfort, especially during sleep','Ultimate comfort for women: softer, smaller, silky smooth and contoured']
   },
